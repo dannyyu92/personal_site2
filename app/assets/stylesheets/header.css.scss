@@ -1,0 +1,16 @@
+.header {
+  background-image: url("http://i.imgur.com/vJEcIL4.png");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  height:300px;
+
+  .circle-image {
+  	border-radius: 100%;
+  	height: 120px;
+  	border: 5px solid #ffffff;
+  	margin-left: auto;
+  	margin-right: auto;
+  	position:relative;
+  	top:10px;
+  }
+}
