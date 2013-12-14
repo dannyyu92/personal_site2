@@ -23,9 +23,9 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <%= yield %>
-
-    
+    <div class="row">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
