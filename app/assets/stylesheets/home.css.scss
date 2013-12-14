@@ -2,26 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
+
 * {
-	text-align:center;
+  text-align:center;
+  font-family: "Open Sans";
 }
 
-/*
-.header_image {
-	position:relative;
-	width: 100%;
-	height: auto;
-	padding-bottom:50px;
+.row {
+	margin-top:50px;
 }
-
-.circle_head {
-	margin-top:-120px;
-	position:relative;
-	margin: 0 auto;
-	bottom:100px;
-	border-radius: 100%;
-	width: 120px;
-	height: auto;
-	border: 5px solid #ffffff;
-}
-*/
