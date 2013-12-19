@@ -1,0 +1,21 @@
+<div class="large-6 small-centered columns">
+
+  <h1>New Article</h1>
+  <%= form_for @article do |f| %>
+    <div class="field">
+      <%= f.label :name %> <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :posttype %> <%= f.text_field :posttype %>
+    </div>
+    <div class="field">
+      <%= f.label :body %> <%= f.text_area :body %><br />
+    </div>
+    <div class="field">
+      <%= f.label :date %> <%= f.datetime_select :date %><br />
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
