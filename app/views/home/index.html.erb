@@ -13,8 +13,10 @@
   <h3>Posts</h3>
   <hr>
   <ul>
-    <% @recent_articles.each do |article| %>
-      <li><%= link_to article.name, article %> <%= article.date %></li>
+    <% if @recent_articles %>
+      <% @recent_articles.each do |article| %>
+        <li><%= link_to article.name, article %> <%= article.date %></li>
+      <% end %>
     <% end %>
   </ul>
   <%= link_to "View More Posts", articles_path %>
