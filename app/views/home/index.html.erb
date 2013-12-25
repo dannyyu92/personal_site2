@@ -10,12 +10,13 @@
 </div>
 
 <div class="large-8 small-centered columns">
+  <h3>Posts</h3>
   <hr>
-    
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt posuere purus ut tincidunt. Donec imperdiet nulla massa, in ullamcorper orci posuere et. Nunc varius pulvinar fermentum. Cras nec lorem ut felis venenatis convallis. Vestibulum hendrerit eu elit et feugiat. Phasellus vitae metus erat. Vivamus at neque felis. Sed aliquam ac massa vel sagittis. Curabitur at nulla et risus pharetra lobortis ut sed mi. Vivamus feugiat ullamcorper consectetur.
-
-    Nam ullamcorper rhoncus purus vel lobortis. Phasellus dapibus sollicitudin mauris in gravida. Donec mattis diam luctus fermentum gravida. Fusce eu ornare elit, nec interdum tellus. Donec accumsan placerat lorem ut tempus. Proin sit amet nulla ut nunc tempus iaculis eget nec est. Sed pretium odio sodales, varius lacus et, ullamcorper nisl. Aenean id blandit mi, nec elementum augue. 
-  </p>
+  <ul>
+    <% @recent_articles.each do |article| %>
+      <li><%= link_to article.name, article %> <%= article.date %></li>
+    <% end %>
+  </ul>
+  <%= link_to "View More Posts", articles_path %>
 </div>
 
