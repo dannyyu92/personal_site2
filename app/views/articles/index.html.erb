@@ -1,10 +1,14 @@
+<% provide(:title, "Posts") %>
 <div class="large-6 small-centered columns">
   <h1>Posts</h1>
   <ul>
     <% @articles.each do |article| %>
-      <li><%= link_to article.name, article %> <%= article.date %> | <%= link_to "Edit", edit_article_path(article.id) %></li>
+      <li><%= link_to article.name, article %> <%= article.date.to_date %> | <%= link_to "Edit", edit_article_path(article.id) %></li>
     <% end %>
   </ul>
 
-  <%= link_to "New Post", new_article_path %>
+  <div class="right">
+    <%= link_to "New Post", new_article_path, class:'button alert tiny radius' %>
+    <%= link_to "Back", root_path, class:'button tiny radius' %>
+  </div>
 </div>

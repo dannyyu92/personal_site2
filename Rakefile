@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-JackySite::Application.load_tasks
+PersonalSite2::Application.load_tasks

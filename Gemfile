@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 gem 'zurb-foundation'
+gem 'paperclip', '~> 3.0'
+gem 'aws-sdk', '~> 1.5.7'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

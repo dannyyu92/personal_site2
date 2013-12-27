@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.order("updated_at ASC").all
+    @articles = Article.order("created_at DESC").all
   end
 
   def new

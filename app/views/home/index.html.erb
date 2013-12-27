@@ -12,12 +12,12 @@
 
 <div class="large-8 small-centered columns">
   <div class="Posts">
-    <h3><%= link_to "Posts", articles_path %></h3>
+    <h3><%= link_to "Posts", articles_path, class: "section-header" %></h3>
     <hr>
     <ul>
       <% if @recent_articles %>
         <% @recent_articles.each do |article| %>
-          <li><%= link_to article.name, article %> <%= article.date %></li>
+          <li><%= link_to article.name, article %> <%= article.date.to_date %></li>
         <% end %>
       <% end %>
     </ul>
@@ -25,13 +25,15 @@
   </div>
 
   <div class="Projects">
-    <h3><%= link_to "Projects", projects_path %></h3>
+    <h3><%= link_to "Projects", projects_path, class: "section-header" %></h3>
     <hr>
-    <% if @projects %>
-      <% @projects.each do |proj| %>
+    <% if @recent_projects %>
+      <% @recent_projects.each do |proj| %>
         <p>
-          <%= link_to proj.name, proj %><br />
-          <%= proj.body %><br />
+          <strong>
+            <%= link_to proj.name, proj %><br />
+          </strong>
+          <%= proj.body %><br /><br />
           <% unless proj.github.empty? %>
             <%= link_to "Github", proj.github, class:"button tiny radius", target: "_new" %>
           <% end %>
@@ -40,6 +42,7 @@
           <% end %>
         </p>
       <% end %>
+      <%= link_to "View More Projects", projects_path %>
     <% end %>
   </div>
 

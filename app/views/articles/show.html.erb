@@ -1,11 +1,18 @@
+<% provide(:title, @article.name) %>
+
 <div class="large-6 small-centered columns">
-  <h1>Article <%= @article.id %> </h1>
+  <h1><%= @article.name %></h1>
+  <h5><%= @article.date.to_date %></h5>
   <p>
-    Name: <%= @article.name %> <br />
     Post Type: <%= @article.posttype %> <br />  
-    Body: <%= @article.body %> <br />
-    Date: <%= @article.date %> <br />
+    <%= raw @article.body %>
   </p>
+
+  <div class="right">
+    <%= link_to 'Edit', edit_article_path(@article), class:'button alert tiny radius' %>
+    <%= link_to 'Back', articles_path, class:'button tiny radius' %>
+  </div>
+  <hr>
 
   <div id="disqus_thread"></div>
   <script type="text/javascript">
@@ -25,7 +32,4 @@
   </noscript>
 
   <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-  <%= link_to 'Edit', edit_article_path(@article) %> |
-  <%= link_to 'Back', articles_path %>
 </div>

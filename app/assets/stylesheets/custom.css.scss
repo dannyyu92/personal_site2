@@ -18,8 +18,16 @@
 }
 
 .Posts {
-  margin-top:50px;
+  margin-top:25px;
 }
+
 .Projects {
   margin-top:50px;
+}
+
+.section-header {
+  color: black;
+  &:hover {
+    color: black
+  } 
 }
