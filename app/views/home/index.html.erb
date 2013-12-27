@@ -4,21 +4,45 @@
       Danny Yu
     </h1>
     <p>
-      NYC Based Ruby on Rails Developer
+      NYC Based Ruby on Rails Developer <br />
+      Senior majoring in Computer Science at Binghamton University
     </p>
   </div>
 </div>
 
 <div class="large-8 small-centered columns">
-  <h3>Posts</h3>
-  <hr>
-  <ul>
-    <% if @recent_articles %>
-      <% @recent_articles.each do |article| %>
-        <li><%= link_to article.name, article %> <%= article.date %></li>
+  <div class="Posts">
+    <h3><%= link_to "Posts", articles_path %></h3>
+    <hr>
+    <ul>
+      <% if @recent_articles %>
+        <% @recent_articles.each do |article| %>
+          <li><%= link_to article.name, article %> <%= article.date %></li>
+        <% end %>
+      <% end %>
+    </ul>
+    <%= link_to "View More Posts", articles_path %>
+  </div>
+
+  <div class="Projects">
+    <h3><%= link_to "Projects", projects_path %></h3>
+    <hr>
+    <% if @projects %>
+      <% @projects.each do |proj| %>
+        <p>
+          <%= link_to proj.name, proj %><br />
+          <%= proj.body %><br />
+          <% unless proj.github.empty? %>
+            <%= link_to "Github", proj.github, class:"button tiny radius", target: "_new" %>
+          <% end %>
+          <% unless proj.site_link.empty? %>
+            <%= link_to "Site Link", proj.site_link, class:"button tiny radius", target: "_new" %>
+          <% end %>
+        </p>
       <% end %>
     <% end %>
-  </ul>
-  <%= link_to "View More Posts", articles_path %>
+  </div>
+
+
 </div>
 

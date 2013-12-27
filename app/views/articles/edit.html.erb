@@ -1,5 +1,9 @@
-<%= render 'form' %>
+<div class="large-6 small-centered columns">
+  <h1>Editing articles</h1>
 
-<%= link_to "Show", @article %> |
-<%= link_to "Back", articles_path %> |
-<%= link_to "Destroy", @article, method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @article %> |
+  <%= link_to 'Back', articles_path %> |
+  <%= link_to "Destroy", @article, method: :delete, data: { confirm: "Are you sure?" } %>
+</div>

@@ -1,0 +1,10 @@
+<div class="large-6 small-centered columns">
+  <h1>Projects</h1>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><%= link_to project.name, project %> | <%= link_to "Edit", edit_project_path(project.id) %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "New Project", new_project_path %>
+</div>

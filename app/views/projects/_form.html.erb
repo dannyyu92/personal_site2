@@ -1,10 +1,10 @@
-<%= form_for @article do |f| %>
-  <% if @article.errors.any? %>
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
       <ul>
-      <% @article.errors.full_messages.each do |msg| %>
+      <% @project.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -15,17 +15,17 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-    <div class="field">
-    <%= f.label :posttype %><br />
-    <%= f.text_field :posttype %>
-  </div>
   <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
+    <%= f.label :github %><br />
+    <%= f.text_field :github %>
+  </div>
+  <div class="field">
+    <%= f.label :site_link %><br />
+    <%= f.text_field :site_link %>
   </div>
   <div class="actions">
     <%= f.submit %>

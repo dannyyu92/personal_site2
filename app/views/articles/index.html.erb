@@ -2,7 +2,9 @@
   <h1>Posts</h1>
   <ul>
     <% @articles.each do |article| %>
-      <li><%= link_to article.name, article %> <%= article.date %></li>
+      <li><%= link_to article.name, article %> <%= article.date %> | <%= link_to "Edit", edit_article_path(article.id) %></li>
     <% end %>
   </ul>
+
+  <%= link_to "New Post", new_article_path %>
 </div>

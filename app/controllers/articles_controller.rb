@@ -1,22 +1,22 @@
 class ArticlesController < ApplicationController
-	def index
-		@articles = Article.order("updated_at ASC").all
-	end
+  def index
+    @articles = Article.order("updated_at ASC").all
+  end
 
   def new
-  	@article = Article.new
+    @article = Article.new
   end
 
   def show
-  	@article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def edit
-  	 @article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def destroy
-  	@article = Article.find(params[:id])
+    @article = Article.find(params[:id])
     @article.destroy
 
     redirect_to articles_url

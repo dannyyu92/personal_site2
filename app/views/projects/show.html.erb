@@ -1,0 +1,26 @@
+<div class="large-6 small-centered columns">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @project.name %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <%= @project.body %>
+  </p>
+
+  <p>
+    <strong>Github:</strong>
+    <%= @project.github %>
+  </p>
+
+  <p>
+    <strong>Site link:</strong>
+    <%= @project.site_link %>
+  </p>
+
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+</div>
