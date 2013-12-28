@@ -48,7 +48,7 @@
           <strong>
             <%= link_to proj.name, proj %><br />
           </strong>
-          <%= proj.body %><br /><br />
+          <%= raw proj.body %><br /><br />
           <% unless proj.github.empty? %>
             <%= link_to "Github", proj.github, class:"button tiny radius", target: "_new" %>
           <% end %>
