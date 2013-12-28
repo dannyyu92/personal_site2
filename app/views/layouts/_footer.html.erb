@@ -1,8 +1,13 @@
 <footer class="footer">
   <nav>
-    <ul class="inline-list right">
-      <li>Built with Ruby on Rails</li>
-      <li>danny@himynameisdanny.com</li>
-    </ul>
+    <div class="right">
+      <ul class="inline-list">
+        <li><i class="fi-mail"> <%= mail_to "danny@himynameisdanny.com" %></i></li>
+        <% unless @global_resume.nil? %>
+          <li><icon class="fi-page-pdf"> <%= link_to "Resume", "https://s3.amazonaws.com/dannyyusite/uploads/DannyYuResume.pdf" %></icon></li>
+        <% end %>
+        <li><icon class="fi-social-github"> <%= link_to "Github", "http://github.com/dannyyu92" %></icon></li>
+      </ul>
+    </div>
   </nav>
 </footer>

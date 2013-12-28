@@ -1,10 +1,9 @@
 <% provide(:title, @article.name) %>
 
-<div class="large-6 small-centered columns">
+<div class="large-8 small-centered columns">
   <h1><%= @article.name %></h1>
   <h5><%= @article.date.to_date %></h5>
   <p>
-    Post Type: <%= @article.posttype %> <br />  
     <%= raw @article.body %>
   </p>
 

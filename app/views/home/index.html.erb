@@ -5,8 +5,13 @@
     </h1>
     <p>
       NYC Based Ruby on Rails Developer <br />
-      Senior majoring in Computer Science at Binghamton University
-    </p>
+      Senior majoring in Computer Science at Binghamton University<br />
+      <icon class="fi-mail"> <%= mail_to "danny@himynameisdanny.com" %></icon><br />
+
+      <icon class="fi-page-pdf"> <%= link_to "Resume", "https://s3.amazonaws.com/dannyyusite/uploads/DannyYuResume.pdf" %></icon> |
+      <icon class="fi-social-github"> <%= link_to "Github", "http://github.com/dannyyu92" %></icon> |
+      <icon class="fi-torso"> <%= link_to "About Me", about_path %></icon><br />
+    </p>      
   </div>
 </div>
 
@@ -46,6 +51,23 @@
     <% end %>
   </div>
 
-
+  <div class="Work">
+    <h3><%= link_to "Work", works_path, class: "section-header" %></h3>
+    <hr>
+    <% if @works %>
+      <% @works.each do |work| %>
+        <p>
+          <strong>
+            <% if work.site_link.empty? %>
+              <%= work.name %><br />
+            <% else %>
+              <%= link_to work.name, work.site_link %><br />
+            <% end %>
+          </strong>
+          <%= raw work.body %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 

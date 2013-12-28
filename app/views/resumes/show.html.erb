@@ -1,0 +1,10 @@
+<div class="large-6 small-centered columns">
+
+  <p id="notice"><%= notice %></p>
+  <p>
+    <%= link_to @resume.pdf_file_name, @resume.pdf.url %>
+  </p>
+
+  <%= link_to 'Edit', edit_resume_path(@resume), class:"button tiny radius"  %>
+  <%= link_to 'Back', resumes_path, class:"button tiny radius"  %>
+</div>

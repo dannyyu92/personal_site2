@@ -1,4 +1,10 @@
 PersonalSite2::Application.routes.draw do
+  resources :githubs
+
+  resources :resumes
+
+  resources :works
+
   resources :projects
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -6,6 +12,8 @@ PersonalSite2::Application.routes.draw do
   resources :articles;
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  get 'about' => "home#about"
   # root 'welcome#index'
 
   # Example of regular route:

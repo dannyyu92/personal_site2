@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131227022945) do
+ActiveRecord::Schema.define(version: 20131228001020) do
 
   create_table "articles", force: true do |t|
     t.string   "name"
     t.string   "posttype"
     t.text     "body"
     t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "githubs", force: true do |t|
+    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +39,23 @@ ActiveRecord::Schema.define(version: 20131227022945) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+  end
+
+  create_table "resumes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
+  end
+
+  create_table "works", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.string   "site_link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -1,0 +1,23 @@
+<% provide(:title, "Work") %>
+<div class="large-8 small-centered columns">
+  <h1>Work</h1>
+  <%= link_to "New work", new_work_path, class:"button alert tiny radius" %>
+  <ul>
+    <% @works.each do |work| %>
+      <hr>
+      <h3>
+        <%= work.name %>
+      </h3>
+      <p>
+        <%= raw work.body %>
+      </p>
+
+      <div class="right">
+        <%= link_to "Edit", edit_work_path(work.id), class:"button alert tiny radius" %>
+      </div>
+    <% end %>
+    <%= link_to 'Back', root_path, class:"button tiny radius right" %>
+  </ul>
+
+
+</div>

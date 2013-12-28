@@ -1,0 +1,17 @@
+<% provide(:title, @work.name) %>
+<div class="large-6 small-centered columns">
+  <p id="notice"><%= notice %></p>
+
+  <h3>
+    <%= @work.name %>
+  </h3>
+  <p>
+    <%= raw @work.body %>
+  </p>
+
+  <%= link_to 'Back', works_path, class:"button tiny radius right" %>
+
+  <%= link_to 'Edit', edit_work_path(@work), class:"button alert tiny radius" %>
+
+  <%= link_to "Destroy", @work, method: :delete, data: { confirm: "Are you sure?" }, class:"button alert tiny radius" %>
+</div>

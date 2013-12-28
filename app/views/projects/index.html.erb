@@ -22,10 +22,10 @@
         <% end %>
       </p>
 
-      <%= link_to 'Back', root_path, class:"button tiny radius right" %>
-      <%= link_to "Edit", edit_project_path(project.id), class:"button alert tiny radius" %>
+      <div class="right">
+        <%= link_to "Edit", edit_project_path(project.id), class:"button alert tiny radius" %>
+      </div>
     <% end %>
+    <%= link_to 'Back', root_path, class:"button tiny radius right" %>
   </ul>
-
-
 </div>

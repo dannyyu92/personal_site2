@@ -1,0 +1,9 @@
+<div class="large-6 small-centered columns">
+  <h1>Editing resume</h1>
+
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @resume, class:"button tiny radius" %>
+  <%= link_to 'Back', resumes_path, class:"button tiny radius" %>
+  <%= link_to "Destroy", @resume, method: :delete, data: { confirm: "Are you sure?" }, class:"button tiny radius" %>
+</div>
