@@ -1,7 +1,9 @@
 <% provide(:title, "Projects") %>
 <div class="large-8 small-centered columns">
   <h1>Projects</h1>
-  <%= link_to "New Project", new_project_path, class:"button alert tiny radius" %>
+  <% if current_user %>
+    <%= link_to "New Project", new_project_path, class:"button alert tiny radius" %>
+  <% end %>
   <ul>
     <% @projects.each do |project| %>
       <hr>
@@ -22,9 +24,11 @@
         <% end %>
       </p>
 
-      <div class="right">
-        <%= link_to "Edit", edit_project_path(project.id), class:"button alert tiny radius" %>
-      </div>
+      <% if current_user %>
+        <div class="right">
+          <%= link_to "Edit", edit_project_path(project.id), class:"button alert tiny radius" %>
+        </div>
+      <% end %>
     <% end %>
     <%= link_to 'Back', root_path, class:"button tiny radius right" %>
   </ul>

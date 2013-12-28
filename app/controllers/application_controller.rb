@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
   def globals
     @global_resume = Resume.all
   end
+
+  private
+  def not_authenticated
+    redirect_to login_path, alert: "Please login first"
+  end
 end

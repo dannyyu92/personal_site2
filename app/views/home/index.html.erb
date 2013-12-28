@@ -1,5 +1,15 @@
 <div class="centered">
   <div class="large-6 small-centered columns">
+    <div>
+      <% if current_user %>
+        <icon class="fi-x"></icon> <%= link_to "Logout", :logout, method: :post %>
+      <% end %>
+    </div>
+    <div>
+      <p id="notice"><%= flash[:notice] %></p>
+      <p id="alert"><%= flash[:alert] %></p>
+    </div>
+
     <h1 id="header-text">
       Danny Yu
     </h1>
@@ -8,8 +18,8 @@
       Senior majoring in Computer Science at Binghamton University<br />
       <icon class="fi-mail"> <%= mail_to "danny@himynameisdanny.com" %></icon><br />
 
-      <icon class="fi-page-pdf"> <%= link_to "Resume", "https://s3.amazonaws.com/dannyyusite/uploads/DannyYuResume.pdf" %></icon> |
-      <icon class="fi-social-github"> <%= link_to "Github", "http://github.com/dannyyu92" %></icon> |
+      <icon class="fi-page-pdf"> <%= link_to "Resume", "https://s3.amazonaws.com/dannyyusite/uploads/DannyYuResume.pdf", target:"_new" %></icon> |
+      <icon class="fi-social-github"> <%= link_to "Github", "http://github.com/dannyyu92", target:"_new" %></icon> |
       <icon class="fi-torso"> <%= link_to "About Me", about_path %></icon><br />
     </p>      
   </div>
@@ -61,7 +71,7 @@
             <% if work.site_link.empty? %>
               <%= work.name %><br />
             <% else %>
-              <%= link_to work.name, work.site_link %><br />
+              <%= link_to work.name, work.site_link, target:"_new" %><br />
             <% end %>
           </strong>
           <%= raw work.body %>

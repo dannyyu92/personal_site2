@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_filter :require_login, except:[:index, :show]
+
   def index
     @projects = Project.all.order("created_at DESC")
   end
