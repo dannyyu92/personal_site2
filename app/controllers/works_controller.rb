@@ -28,6 +28,7 @@ class WorksController < ApplicationController
   end
 
   def update
+    @work = Work.find(params[:id])
     if @work.update(work_params)
       redirect_to @work, notice: 'Work was successfully updated.'
     else
