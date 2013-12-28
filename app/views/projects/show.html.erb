@@ -18,9 +18,11 @@
       <%= link_to "Site Link", @project.site_link, class:"button tiny radius" %>
     <% end %>
   </p>
+
   <%= link_to 'Back', projects_path, class:"button tiny radius right" %>
 
-  <%= link_to 'Edit', edit_project_path(@project), class:"button alert tiny radius" %>
-
-  <%= link_to "Destroy", @project, method: :delete, data: { confirm: "Are you sure?" }, class:"button alert tiny radius" %>
+  <% if current_user %>
+    <%= link_to 'Edit', edit_project_path(@project), class:"button alert tiny radius" %>
+    <%= link_to "Destroy", @project, method: :delete, data: { confirm: "Are you sure?" }, class:"button alert tiny radius" %>
+  <% end %>
 </div>

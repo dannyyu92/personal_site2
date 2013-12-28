@@ -11,7 +11,8 @@
 
   <%= link_to 'Back', works_path, class:"button tiny radius right" %>
 
-  <%= link_to 'Edit', edit_work_path(@work), class:"button alert tiny radius" %>
-
-  <%= link_to "Destroy", @work, method: :delete, data: { confirm: "Are you sure?" }, class:"button alert tiny radius" %>
+  <% if current_user %>
+    <%= link_to 'Edit', edit_work_path(@work), class:"button alert tiny radius" %>
+    <%= link_to "Destroy", @work, method: :delete, data: { confirm: "Are you sure?" }, class:"button alert tiny radius" %>
+  <% end %>
 </div>
