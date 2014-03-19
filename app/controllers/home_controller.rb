@@ -1,6 +1,4 @@
 class HomeController < ApplicationController
-  require "twilio-ruby"
-
   def index
     @articles = Article.all  
     @recent_articles = Article.order("created_at DESC").first(5)
