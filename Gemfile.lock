@@ -33,11 +33,15 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     builder (3.1.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.3)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -49,6 +53,9 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
@@ -148,6 +155,10 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.0.0)
       coffee-rails
+    twilio-ruby (3.11.5)
+      builder (>= 2.1.2)
+      jwt (>= 0.1.2)
+      multi_json (>= 1.3.0)
     tzinfo (0.3.38)
     uglifier (2.3.2)
       execjs (>= 0.3.0)
@@ -161,7 +172,9 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk (~> 1.5.7)
+  better_errors
   coffee-rails (~> 4.0.0)
+  figaro
   foundation-icons-sass-rails
   jbuilder (~> 1.2)
   jquery-rails
@@ -174,5 +187,6 @@ DEPENDENCIES
   sorcery
   sqlite3 (= 1.3.8)
   turbolinks
+  twilio-ruby
   uglifier (>= 1.3.0)
   zurb-foundation

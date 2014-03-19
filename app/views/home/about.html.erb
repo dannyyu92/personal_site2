@@ -1,16 +1,34 @@
 <% provide(:title, "About") %>
-<div class="large-6 small-centered columns">
+<div class="large-8 small-centered columns">
+  <% if flash[:notice].present? %>
+    <div data-alert class="alert-box">
+      <%= flash[:notice] %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
   <h1>
     About Me
   </h1>
   <p>
-    Hey guys! My name is Danny.<br />
+    Hey guys! I'm Danny.<br />
     I'm currently a Senior at Binghamton University, majoring in Computer Science.
   </p>
   <p>
-    I love tinkering with <icon class="fi-laptop"> Ruby/Rails</icon>, <icon class="fi-music"> playing guitar/singing</icon>, and <icon class="fi-torsos"> running</icon> on my spare time.
+    Creating web apps enables me to tune into my creative side, as well as make use of my problem solving skills. I find it addictively fun. <br />
+    As a result, you can find me tinkering with <i class="fi-laptop"></i> Ruby/Rails, <i class="fi-music"></i> playing guitar/singing, or <i class="fi-torsos"></i> running in my spare time.
   </p>
   <p>
     Currently looking for an entry-level Ruby on Rails developer position or internship!
   </p>
+
+  <div class="txt-msg-section">
+  <h4>
+    Want to shoot me a text?
+  </h4>
+  <%= form_tag about_path, :method => :get do %>
+    <%= text_field_tag :name, nil, placeholder: "Name" %>
+    <%= text_area_tag :message, nil, placeholder: "Hi Danny! You can reach me back at me@example.com." %>
+    <%= submit_tag "Send Text", class: "button tiny radius" %>
+  <% end %>
+</div>
 </div>

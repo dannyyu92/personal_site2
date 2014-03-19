@@ -7,9 +7,12 @@ gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.5.7'
 gem 'foundation-icons-sass-rails'
 gem 'sorcery'
+gem 'twilio-ruby'
+gem 'figaro'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
+  gem 'better_errors'
 end
 
 group :production do

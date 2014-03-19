@@ -3,20 +3,15 @@ PersonalSite2::Application.routes.draw do
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :user_sessions
-
   resources :users
-
-  resources :githubs
-
   resources :resumes
-
+  resources :articles
   resources :works
-
   resources :projects
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :articles;
+
   # You can have the root of your site routed with "root"
   root 'home#index'
 
