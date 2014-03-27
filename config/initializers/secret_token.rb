@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-PersonalSite2::Application.config.secret_key_base = '723426f44f272dbb729815a9502aeac755eb7471a859b3e415e56b4f41494eeed0cf1629e0da37bd3b94458d765b8814735e38288a3672610c1150fdd32cdd84'
+PersonalSite2::Application.config.secret_key_base = ENV["RAILS_SECRET_TOKEN"]
