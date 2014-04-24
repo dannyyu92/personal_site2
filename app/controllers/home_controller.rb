@@ -11,7 +11,8 @@ class HomeController < ApplicationController
 
   def about
     if params[:name].present? && params[:message].present?
-      send_sms_message(params[:name], params[:message])
+      SmsWorker.perform_async(params[:name], params[:message])
+      #send_sms_message(params[:name], params[:message])
       redirect_to about_path, notice: "SMS successfully sent. Thanks!"
     end
   end

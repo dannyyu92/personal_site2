@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 PersonalSite2::Application.routes.draw do
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
@@ -16,6 +18,11 @@ PersonalSite2::Application.routes.draw do
   root 'home#index'
 
   get 'about' => "home#about"
+
+  Sidekiq::Web.use(Rack::Auth::Basic) do |user, password|
+    [user, password] == [ENV["SIDEKIQ_USER"], ENV["SIDEKIQ_PW"]]
+  end
+  mount Sidekiq::Web, at: "/sidekiq"
   # root 'welcome#index'
 
   # Example of regular route:

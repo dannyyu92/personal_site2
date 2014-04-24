@@ -9,6 +9,10 @@ gem 'foundation-icons-sass-rails'
 gem 'sorcery'
 gem 'twilio-ruby'
 gem 'figaro'
+# Background job workers
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
