@@ -17,7 +17,7 @@ Front End:
 APIs:
 * Twilio API for SMS messaging straight to my phone (check out the about page!)
 
-Background Workers
+Background Workers:
 * Sidekiq to send SMS messages asynchronously
 * Unicorn Rack HTTP Server (to use one dyno for multiple workers on Heroku)
 
