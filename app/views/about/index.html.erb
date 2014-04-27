@@ -25,10 +25,10 @@
   <h4>
     Want to shoot me a text?
   </h4>
-  <%= form_tag @smsmessage do %>
-    <%= text_field_tag :name, nil, placeholder: "Name" %>
-    <%= text_area_tag :message, nil, placeholder: "Hi Danny! You can reach me back at me@example.com." %>
-    <%= submit_tag "Send Text", class: "button tiny radius" %>
+  <%= form_for @smsmessage, url: about_index_path do |f| %>
+    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.text_area :message, placeholder: "Hi Danny! You can reach me back at me@example.com." %>
+    <%= f.submit "Send Text", class: "button tiny radius" %>
   <% end %>
 </div>
 </div>

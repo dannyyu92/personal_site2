@@ -9,6 +9,7 @@ gem 'foundation-icons-sass-rails'
 gem 'sorcery'
 gem 'twilio-ruby'
 gem 'figaro'
+gem 'activerecord-tableless'
 # Background job workers
 gem 'sidekiq'
 gem 'sinatra', require: false
@@ -18,6 +19,7 @@ gem 'unicorn'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do

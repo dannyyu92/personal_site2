@@ -8,11 +8,4 @@ class HomeController < ApplicationController
 
     @works = Work.all.order("created_at DESC")
   end
-
-  def about
-    if params[:name].present? && params[:message].present?
-      SmsWorker.perform_async(params[:name], params[:message])
-      redirect_to about_path, notice: "SMS successfully sent. Thanks!"
-    end
-  end
 end

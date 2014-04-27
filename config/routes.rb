@@ -10,14 +10,14 @@ PersonalSite2::Application.routes.draw do
   resources :articles
   resources :works
   resources :projects
+  resources :home, only: [:index]
+  resources :about, only: [:index, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-
-  get 'about' => "home#about"
 
   Sidekiq::Web.use(Rack::Auth::Basic) do |user, password|
     [user, password] == [ENV["SIDEKIQ_USER"], ENV["SIDEKIQ_PW"]]
