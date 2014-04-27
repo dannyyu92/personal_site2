@@ -20,6 +20,7 @@ APIs:
 Background Workers:
 * Sidekiq to send SMS messages asynchronously
 * Unicorn Rack HTTP Server (to use one dyno for multiple workers on Heroku)
+* Redis/ RedisToGo
 
 Authentication:
 * Sorcery for admin authentication
