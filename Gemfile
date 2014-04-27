@@ -14,7 +14,6 @@ gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
 gem 'unicorn'
-gem 'redis'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
