@@ -12,19 +12,7 @@ class HomeController < ApplicationController
   def about
     if params[:name].present? && params[:message].present?
       SmsWorker.perform_async(params[:name], params[:message])
-      #send_sms_message(params[:name], params[:message])
       redirect_to about_path, notice: "SMS successfully sent. Thanks!"
     end
-  end
-
-  private
-  def send_sms_message(name, msg)
-    # set up a client to talk to the Twilio REST API 
-    @client = Twilio::REST::Client.new ENV["TWILIO_SID"], ENV["TWILIO_AUTH_TOKEN"]
-    @client.account.sms.messages.create({
-      :from => ENV["TWILIO_PHONE_FROM"],
-      :to => ENV["TWILIO_PHONE_TO"],
-      :body => "#{name}: #{msg}"
-    })
   end
 end
