@@ -11,18 +11,26 @@ It includes
 -------------------------
 
 Front End:
-* ZURB Foundation 3
+* ZURB Foundation 4
 * Foundation Icons
 
 APIs:
-* Twilio API for SMS messaging straight to my phone
+* Twilio API for SMS messaging straight to my phone (check out the about page!)
 
-Other:
+Background Workers
+* Sidekiq to send SMS messages asynchronously
+* Unicorn Rack HTTP Server (to use one dyno for multiple workers on Heroku)
+
+Authentication:
 * Sorcery for admin authentication
+
+Blog-related:
 * Disqus-powered comments
-* Figaro for easy ENV var handling
 * Paperclip for image uploading
 * Amazon S3 for file hosting
+
+Other:
+* Figaro for easy ENV var handling
 
 Soon to add:
 ------------------------
